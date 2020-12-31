@@ -53,10 +53,12 @@ If a page has dynamic routes and uses `getStaticProps` it needs to define a list
 
 ```tsx
 export default definePage(Component, {
-    async getStaticProps(context) {
-        paths: [
-            { params: { ... } } // See the "paths" section below
-        ],
+    async getStaticPaths(context) {
+        return {
+            paths: [
+                { params: { ... } } // See the "paths" section below
+            ],
+        }
     }
 })
 ```
